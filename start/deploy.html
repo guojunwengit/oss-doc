@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.53">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>部署服务 | Gopher分布式对象存储</title><meta name="description" content="一个简单的分布式对象存储">
+    <link rel="preload" href="/oss-doc/assets/style.9554e76d.css" as="style" /><link rel="stylesheet" href="/oss-doc/assets/style.9554e76d.css" />
+    <link rel="modulepreload" href="/oss-doc/assets/app.ddc13804.js"><link rel="modulepreload" href="/oss-doc/assets/deploy.html.f7cc2a96.js"><link rel="modulepreload" href="/oss-doc/assets/deploy.html.02776653.js"><link rel="prefetch" href="/oss-doc/assets/index.html.7a185f1d.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/position.html.18ef124b.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/index.html.8870a068.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/technology.html.63f33548.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/api.html.30343ab5.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/preparation.html.4b7572fa.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/index.html.3967b939.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/404.html.c3e557d0.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/index.html.7d8e361f.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/position.html.f9d1ab96.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/index.html.784e1968.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/technology.html.9e37af85.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/api.html.be766fd6.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/preparation.html.d4119366.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/index.html.2a9da577.js" as="script" /><link rel="prefetch" href="/oss-doc/assets/404.html.c8561e53.js" as="script" />
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/oss-doc/" class=""><!----><span class="site-name">Gopher分布式对象存储</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/oss-doc/" class="" aria-label="首页"><!--[--><!--]--> 首页 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/oss-doc/introduce" class="" aria-label="介绍"><!--[--><!--]--> 介绍 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/oss-doc/start" class="router-link-active" aria-label="快速开始"><!--[--><!--]--> 快速开始 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/oss-doc/introduce" class="" aria-label="控制台首页"><!--[--><!--]--> 控制台首页 <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="版本"><span class="title">版本</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="版本"><span class="title">版本</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a class="external-link" href="http://localhost:8080/" rel="noopener noreferrer" target="_blank" aria-label="V1.0"><!--[--><!--]--> V1.0 <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><form class="search-box" role="search"><input type="search" autocomplete="off" spellcheck="false" value><!----></form></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/oss-doc/" class="" aria-label="首页"><!--[--><!--]--> 首页 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/oss-doc/introduce" class="" aria-label="介绍"><!--[--><!--]--> 介绍 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/oss-doc/start" class="router-link-active" aria-label="快速开始"><!--[--><!--]--> 快速开始 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/oss-doc/introduce" class="" aria-label="控制台首页"><!--[--><!--]--> 控制台首页 <!--[--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="版本"><span class="title">版本</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="版本"><span class="title">版本</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a class="external-link" href="http://localhost:8080/" rel="noopener noreferrer" target="_blank" aria-label="V1.0"><!--[--><!--]--> V1.0 <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><a href="/oss-doc/start/" class="router-link-active sidebar-item sidebar-heading" aria-label="前言"><!--[--><!--]--> 前言 <!--[--><!--]--></a><!----></li><li><a href="/oss-doc/start/preparation.html" class="sidebar-item sidebar-heading" aria-label="准备工作"><!--[--><!--]--> 准备工作 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/oss-doc/start/deploy.html" class="router-link-active router-link-exact-active router-link-active sidebar-item sidebar-heading active" aria-label="部署服务"><!--[--><!--]--> 部署服务 <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/oss-doc/start/deploy.html#服务端" class="router-link-active router-link-exact-active sidebar-item" aria-label="服务端"><!--[--><!--]--> 服务端 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/oss-doc/start/deploy.html#客户端" class="router-link-active router-link-exact-active sidebar-item" aria-label="客户端"><!--[--><!--]--> 客户端 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/oss-doc/start/api.html" class="sidebar-item sidebar-heading" aria-label="API接口"><!--[--><!--]--> API接口 <!--[--><!--]--></a><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="部署服务" tabindex="-1"><a class="header-anchor" href="#部署服务" aria-hidden="true">#</a> 部署服务</h1><h2 id="服务端" tabindex="-1"><a class="header-anchor" href="#服务端" aria-hidden="true">#</a> 服务端</h2><blockquote><p>务必：dataServer数据服务节点务必启动6个节点及以上</p><p>建议：apiServer接口服务节点建议启动2个节点以上并设置负载均衡</p></blockquote><p>Git克隆源码</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">git</span> clone
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>进入项目根目录下，创建初始化脚本和启动项目脚本</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> oss
+<span class="token function">touch</span> init.sh
+<span class="token function">touch</span> start.sh
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>init.sh初始化脚本示例如下</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+go build <span class="token parameter variable">-o</span> apiServer apiServer/apiServer.go
+go build <span class="token parameter variable">-o</span> dataServer dataServer/dataServer.go
+go build <span class="token parameter variable">-o</span> deleteOldMetadata deleteOldMetadata/deleteOldMetadata.go
+go build <span class="token parameter variable">-o</span> deleteOrphanObject deleteOrphanObject/deleteOrphanObject.go
+go build <span class="token parameter variable">-o</span> objectScanner objectScanner/objectScanner.go
+
+<span class="token comment">#关闭服务</span>
+<span class="token function">killall</span> apiServer
+<span class="token function">killall</span> dataServer
+
+<span class="token function">chmod</span> <span class="token number">777</span> apiServer/apiServer
+<span class="token function">chmod</span> <span class="token number">777</span> dataServer/dataServer
+<span class="token function">chmod</span> <span class="token number">777</span> deleteOldMetadata/deleteOldMetadata
+<span class="token function">chmod</span> <span class="token number">777</span> deleteOrphanObject/deleteOrphanObject
+<span class="token function">chmod</span> <span class="token number">777</span> objectScanner/objectScanner
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>启动项目脚本示例如下（因为数据服务最低要求为6个节点，而我这里只在一台机器上运行，所以使用使用1～6数字创建目录）</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">`</span><span class="token function">seq</span> <span class="token number">1</span> <span class="token number">6</span><span class="token variable">`</span></span>
+<span class="token keyword">do</span>
+    <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /tmp/<span class="token variable">$i</span>/objects
+    <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /tmp/<span class="token variable">$i</span>/temp
+    <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /tmp/<span class="token variable">$i</span>/garbage
+    <span class="token function">rm</span> <span class="token parameter variable">-rf</span> /tmp/<span class="token variable">$i</span>/objects/*
+    <span class="token function">rm</span> <span class="token parameter variable">-rf</span> /tmp/<span class="token variable">$i</span>/temp/*
+    <span class="token function">rm</span> <span class="token parameter variable">-rf</span> /tmp/<span class="token variable">$i</span>/garbage/*
+<span class="token keyword">done</span>
+
+<span class="token assign-left variable">LISTEN_ADDRESS</span><span class="token operator">=</span><span class="token number">10.29</span>.1.1:12345 <span class="token assign-left variable">STORAGE_ROOT</span><span class="token operator">=</span>/tmp/1 ./<span class="token variable">$1</span>/dataServer/dataServer <span class="token operator">&amp;</span>
+<span class="token assign-left variable">LISTEN_ADDRESS</span><span class="token operator">=</span><span class="token number">10.29</span>.1.2:12345 <span class="token assign-left variable">STORAGE_ROOT</span><span class="token operator">=</span>/tmp/2 ./<span class="token variable">$1</span>/dataServer/dataServer <span class="token operator">&amp;</span>
+<span class="token assign-left variable">LISTEN_ADDRESS</span><span class="token operator">=</span><span class="token number">10.29</span>.1.3:12345 <span class="token assign-left variable">STORAGE_ROOT</span><span class="token operator">=</span>/tmp/3 ./<span class="token variable">$1</span>/dataServer/dataServer <span class="token operator">&amp;</span>
+<span class="token assign-left variable">LISTEN_ADDRESS</span><span class="token operator">=</span><span class="token number">10.29</span>.1.4:12345 <span class="token assign-left variable">STORAGE_ROOT</span><span class="token operator">=</span>/tmp/4 ./<span class="token variable">$1</span>/dataServer/dataServer <span class="token operator">&amp;</span>
+<span class="token assign-left variable">LISTEN_ADDRESS</span><span class="token operator">=</span><span class="token number">10.29</span>.1.5:12345 <span class="token assign-left variable">STORAGE_ROOT</span><span class="token operator">=</span>/tmp/5 ./<span class="token variable">$1</span>/dataServer/dataServer <span class="token operator">&amp;</span>
+<span class="token assign-left variable">LISTEN_ADDRESS</span><span class="token operator">=</span><span class="token number">10.29</span>.1.6:12345 <span class="token assign-left variable">STORAGE_ROOT</span><span class="token operator">=</span>/tmp/6 ./<span class="token variable">$1</span>/dataServer/dataServer <span class="token operator">&amp;</span>
+
+<span class="token assign-left variable">LISTEN_ADDRESS</span><span class="token operator">=</span><span class="token number">10.29</span>.2.1:12345 ./<span class="token variable">$1</span>/apiServer/apiServer <span class="token operator">&amp;</span>
+<span class="token assign-left variable">LISTEN_ADDRESS</span><span class="token operator">=</span><span class="token number">10.29</span>.2.2:12345 ./<span class="token variable">$1</span>/apiServer/apiServer <span class="token operator">&amp;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>LISTEN_ADDRESS指定服务所在的IP，STORAGE_ROOT指定对象存储的位置，需要提前objects、temp、garbage创建目录</p></blockquote><p>Nginx <strong>负载均衡</strong>示例，值得注意的是，项目中存在HEAD请求，Nginx会将head请求以get请求的方式发送给上游服务器，以下示例前三行解决了这个问题：</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>proxy_cache_convert_head off<span class="token punctuation">;</span>
+proxy_cache_methods GET HEAD<span class="token punctuation">;</span>
+proxy_cache_key <span class="token variable">$scheme</span><span class="token variable">$request_method</span><span class="token variable">$proxy_host</span><span class="token variable">$request_uri</span><span class="token punctuation">;</span>
+
+upstream ossApiServer <span class="token punctuation">{</span> // apiServer接口服务地址
+	<span class="token punctuation">..</span>.
+	server ip:port<span class="token punctuation">;</span>
+	server ip:port<span class="token punctuation">;</span>
+	server ip:port<span class="token punctuation">;</span>
+	<span class="token punctuation">..</span>.
+<span class="token punctuation">}</span>
+
+server <span class="token punctuation">{</span>
+	<span class="token punctuation">..</span>.
+	listen       port<span class="token punctuation">;</span>
+	server_name  ip:port<span class="token punctuation">;</span>
+
+	location / <span class="token punctuation">{</span>
+		proxy_pass http://ossApiServer<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token punctuation">..</span>.
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>如果您追求更加高可用的策略，或可以选择其它，例如 OpenResty+Keepalived</p><h2 id="客户端" tabindex="-1"><a class="header-anchor" href="#客户端" aria-hidden="true">#</a> 客户端</h2><p>Git克隆源码</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">git</span> clone
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>修改项目根目录下vue.config.js中关于接口地址等信息，如果您在之前设置了负载均衡策略，请将target改为反向代理的地址</p><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token operator">...</span>
+    <span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">disableHostCheck</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">&#39;域名&#39;</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">port</span><span class="token operator">:</span> 端口<span class="token punctuation">,</span>
+        <span class="token literal-property property">proxy</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token string-property property">&#39;/api&#39;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">&#39;后端接口Base Url&#39;</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">secure</span><span class="token operator">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">changeOrigin</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">pathRewrite</span><span class="token operator">:</span><span class="token punctuation">{</span>
+                    <span class="token string-property property">&quot;^/api&quot;</span><span class="token operator">:</span><span class="token string">&quot;&quot;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>项目根目录下执行，启动项目</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span>
+<span class="token function">npm</span> run serve
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>打包vue项目</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">npm</span> run build
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>Nginx跨域配置示例，<code>location /apis/ { ... }</code>为反向代理，将<code>ApiServer_URL</code>替换为接口地址</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>server
+<span class="token punctuation">{</span>
+    listen <span class="token number">80</span><span class="token punctuation">;</span>
+    server_name lploss.cn<span class="token punctuation">;</span>
+    index index.php index.html index.htm default.php default.htm default.html<span class="token punctuation">;</span>
+    root /www/wwwroot/lploss.cn<span class="token punctuation">;</span>
+    
+    try_files <span class="token variable">$uri</span> <span class="token variable">$uri</span>/ /index.html<span class="token punctuation">;</span>
+  
+    <span class="token comment"># 反向代理</span>
+    location /apis/ <span class="token punctuation">{</span>
+        proxy_pass ApiServer_URL<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token punctuation">..</span>.
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>另外上述示例中<code>try_files $uri $uri/ /index.html;</code>一行解决了vue-router中使用history模式导致刷新页面404状态码的问题，如果是您使用Tomact部署，解决此问题请移步：<a href="https://developer-help.cn/index.php/archives/17/" target="_blank" rel="noopener noreferrer">Vue项目部署服务器后刷新页面报404<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p></div><!--[--><!--]--></div><footer class="page-meta"><!----><!----><!----></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/oss-doc/start/preparation.html" class="" aria-label="准备工作"><!--[--><!--]--> 准备工作 <!--[--><!--]--></a></span><span class="next"><a href="/oss-doc/start/api.html" class="" aria-label="API接口"><!--[--><!--]--> API接口 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/oss-doc/assets/app.ddc13804.js" defer></script>
+  </body>
+</html>
